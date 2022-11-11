@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Outputs the time
+Resources:
+  LF0:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: LF0.lambda_handler
+      Runtime: python3.9
+      CodeUri: ./lambdas/
+      FunctionName: "LF0"
+  LF1:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: LF1.lambda_handler
+      Runtime: python3.9
+      CodeUri: ./lambdas/
+      FunctionName: "LF1"
+  LF2:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: LF2.lambda_handler
+      Runtime: python3.9
+      CodeUri: ./lambdas/
+      FunctionName: "LF2"
