@@ -60,5 +60,5 @@ def lambda_handler(event, context):
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'OPTIONS,PUT,GET'
         },
-        'body': json.dumps("Photo lables added Successfully!")
+        'body': json.dumps("Photo lables added SUCCESSFULLY!")
     }
