@@ -61,8 +61,7 @@ function searchPhotos(searchText) {
     document.getElementById('photos_search_results').innerHTML = "<h4 style=\"text-align:center\">";
 
     var params = {
-        'q' : searchText,
-        'x-api-key': "fyzXzq8Toh7BIrGHRTItaaABS1Z2BDNu4s9qiYh1"
+        'q' : searchText
     };
 
     var additionalParams = {
@@ -127,8 +126,7 @@ function uploadPhoto() {
           "folder":"lixuanyanghw2",
           "item": file.name,
           "Content-Type":file.type,
-          'x-amz-meta-customLabels':custom_labels.value,
-          'x-api-key': "fyzXzq8Toh7BIrGHRTItaaABS1Z2BDNu4s9qiYh1"
+          'x-amz-meta-customLabels':custom_labels.value
           //'Access-Control-Allow-Origin':"*"
         };
         console.log("Content-Type:",file.type)
