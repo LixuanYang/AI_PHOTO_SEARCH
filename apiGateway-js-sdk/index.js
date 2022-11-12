@@ -68,9 +68,9 @@ function searchPhotos(searchText) {
     var additionalParams = {
 
     };
-    var apigClient = apigClientFactory.newClient(
+    var apigClient = apigClientFactory.newClient({
       apiKey: 'fyzXzq8Toh7BIrGHRTItaaABS1Z2BDNu4s9qiYh1'
-    );
+    });
     //call search api
     apigClient.searchGet(params, {}, {})
         .then(function(result) {
@@ -99,9 +99,9 @@ function searchPhotos(searchText) {
 }
 
 function uploadPhoto() {
-    var apigClient = apigClientFactory.newClient(
-      apiKey: 'fyzXzq8Toh7BIrGHRTItaaABS1Z2BDNu4s9qiYh1'
-    );
+    var apigClient = apigClientFactory.newClient({
+        apiKey: 'fyzXzq8Toh7BIrGHRTItaaABS1Z2BDNu4s9qiYh1'
+      });
     var filePath = (document.getElementById('uploaded_file').value).split("\\");
     var fileName = filePath[filePath.length - 1];
 
