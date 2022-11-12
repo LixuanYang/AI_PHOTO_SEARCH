@@ -13,19 +13,6 @@ s3 = boto3.client('s3')
 def detect_labels(photo, bucket):
 
     client=boto3.client('rekognition', region_name="us-east-1")
-    '''
-    self.rekog_client = boto3.client('rekognition', 'us-east-1')
-    with open('cat_pic600.jpg', "rb") as cf:
-        base64_image=base64.b64encode(cf.read())
-        base_64_binary = base64.decodebytes(base64_image)
-    resp = self.rekog_client.detect_labels(Image={'Bytes': base_64_binary})
-    
-    binaryPhoto = base64.b64encode(photo)
-    print("binaryPhoto:",binaryPhoto)
-    
-    binarydata = base64.b64decode(binaryPhoto)
-    print("binarydata:",binarydata)
-    '''
     headerresponse = s3.head_object(
         Bucket=bucket,
         Key=photo
@@ -73,5 +60,5 @@ def lambda_handler(event, context):
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'OPTIONS,PUT,GET'
         },
-        'body': json.dumps("Photo lables added successfully!")
+        'body': json.dumps("Photo lables added Successfully!")
     }
