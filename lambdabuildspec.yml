@@ -1,0 +1,13 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+        python: 3.9
+  build:
+    commands:
+      - aws cloudformation package --template-file lambdatemplate.yml --s3-bucket lambdapipelinelixuanyang --output-template-file outputLambdatemplate.yml
+artifacts:
+  type: zip
+  files:
+    - lambdatemplate.yml
+    - outputLambdatemplate.yml

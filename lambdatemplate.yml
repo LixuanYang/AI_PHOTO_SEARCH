@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Outputs the time
+Resources:
+  LF0:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: LF0.lambda_handler
+      Runtime: python3.9
+      CodeUri: ./lambdas/
+      MemorySize: 128
+      Timeout: 3
+      Role: 'arn:aws:iam::121063675658:role/service-role/LF0-role-9qlc7ppy'
+      Environment:
+        Variables:
+          REGION: us-east-1
+  LF1:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: LF1.lambda_handler
+      Runtime: python3.9
+      CodeUri: ./lambdas/
+      MemorySize: 128
+      Timeout: 3
+      Role: 'arn:aws:iam::121063675658:role/service-role/LF1-role-k16tqhoq'
+      Environment:
+        Variables:
+          REGION: us-east-1
+  LF2:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: LF2.lambda_handler
+      Runtime: python3.9
+      CodeUri: ./lambdas/
+      MemorySize: 128
+      Timeout: 30
+      Role: 'arn:aws:iam::121063675658:role/service-role/LF2-role-osl670s8'
+      Environment:
+        Variables:
+          REGION: us-east-1
