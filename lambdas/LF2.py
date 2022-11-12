@@ -71,7 +71,7 @@ def search_intent(slots):
     for tag in slots:
         if tag:
             tag = plural(tag)
-            searchurl = url + '/_search?q=' + tag
+            searchurl = url + '/_search?q=' + tag +"&size=50"
             #print('ES URL --- {}'.format(searchurl))
             '''
             query = {
